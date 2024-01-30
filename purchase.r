@@ -16,3 +16,12 @@ install.packages("corrplot")
 library(corrplot)
 
 corrplot(cor_matrix, method = "color")
+
+
+# カテゴリカルデータのクロス集計
+cross_table <- table(data$PurchasePreference, data$Price)
+print(cross_table)
+
+# カイ二乗検定の実行
+chi2_result <- chisq.test(cross_table)
+print(chi2_result)
